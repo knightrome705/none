@@ -6,7 +6,8 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller=Provider.of<HomeController>(context);
+    final controller=Provider.of<HomeController>(context,listen: false);
+    print('rebuild occured');
     return Scaffold(
       appBar: AppBar(
         title:const Text('Profile'),
@@ -15,16 +16,16 @@ class Profile extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-           controller.file==null?const SizedBox(): Consumer<HomeController>(
+           Consumer<HomeController>(
              builder: (context,data,_) {
-               return Image.file(data.file!,height: 200,width: 200,);
+               return controller.file==null?const SizedBox(): Image.file(data.file!,height: 100,width: 200,);
              }
            ),
             ElevatedButton(onPressed: (){
               controller.pickImage();
             }, child:const Text('click me'),
             style: ElevatedButton.styleFrom(
-              minimumSize: Size(300, 100),
+              minimumSize: Size(300, 50),
               backgroundColor: Colors.red
             ),
             ),
