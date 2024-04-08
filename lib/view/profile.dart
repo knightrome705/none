@@ -22,7 +22,12 @@ class Profile extends StatelessWidget {
            ),
             ElevatedButton(onPressed: (){
               controller.pickImage();
-            }, child:const Text('click me')),
+            }, child:const Text('click me'),
+            style: ElevatedButton.styleFrom(
+              minimumSize: Size(300, 100),
+              backgroundColor: Colors.red
+            ),
+            ),
           ],
         ),
       ),
