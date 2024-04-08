@@ -6,6 +6,7 @@ import 'package:untitled/view/profile.dart';
 
 void main() {
   runApp(const MyApp());
+  print('commit new changes');
 }
 
 class MyApp extends StatelessWidget {
