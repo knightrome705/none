@@ -17,7 +17,7 @@ class Home extends StatelessWidget {
           if(state.isLoading){
             return const Center(child: CircularProgressIndicator(),);
           }else{
-            return Center(child: Text(state.data??"noData",textAlign:TextAlign.center,style:const TextStyle(fontSize: 20)));
+            return Center(child: Text(state.user?.results[0].picture.large??'nodata'));
           }
         },
       ),

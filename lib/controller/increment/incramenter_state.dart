@@ -1,11 +1,11 @@
 part of 'incramenter_bloc.dart';
 
  class IncramenterState {
-  String? data;
+  User? user;
   bool isLoading;
   
   
-  IncramenterState({this.data,required this.isLoading});
+  IncramenterState({this.user,required this.isLoading});
  }
 
  class Loading extends IncramenterState {

@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled/model/random.dart';
 import 'package:untitled/repository/api_fetch.dart';
 part 'incramenter_event.dart';
 part 'incramenter_state.dart';
@@ -25,7 +26,7 @@ class IncramenterBloc extends Bloc<IncramenterEvent, IncramenterState> {
     on<FetchData>((event, emit)async {
       emit(IncramenterState(isLoading: true));
       final data=await ApiFetch.fetchUser();
-      emit(IncramenterState(isLoading: false,data: data));
+      emit(IncramenterState(isLoading: false,user: data));
       
     });
 
