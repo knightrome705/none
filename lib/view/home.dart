@@ -7,35 +7,25 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final a = TextEditingController();
-    final b = TextEditingController();
     return Scaffold(
       appBar: AppBar(
-        title:const Text('Add 2 numbers'),
+        title:const Text('Fetch Data From Api',style: TextStyle(color: Colors.white),),
         backgroundColor: Colors.red,
       ),
-      body: Column(
-        children: [
-          BlocBuilder<IncramenterBloc, IncramenterState>(
-           builder: (context, state) {
-              return Text(state.counter.toString());
-            },
-          ),
-          TextField(
-            controller: a,
-            decoration:const InputDecoration(
-                labelText: 'Enter a', border: OutlineInputBorder()),
-          ),
-          TextField(
-            controller: b,
-            decoration:const InputDecoration(
-                labelText: 'enter b', border: OutlineInputBorder()),
-          ),
-          
-        ],
+      body: BlocBuilder<IncramenterBloc, IncramenterState>(
+       builder: (context, state) {
+          if(state.isLoading){
+            return const Center(child: CircularProgressIndicator(),);
+          }else{
+            return Center(child: Text(state.data??"noData",textAlign:TextAlign.center,style:const TextStyle(fontSize: 20)));
+          }
+        },
       ),
-      floatingActionButton: FloatingActionButton(onPressed: (){
-        context.read<IncramenterBloc>().add(IncramenterEvent(value: a.text));
+      floatingActionButton: FloatingActionButton.extended(
+        backgroundColor: Colors.deepPurple,
+        label:const Text('Fetch Api',style: TextStyle(color: Colors.white),),
+        onPressed: (){
+        context.read<IncramenterBloc>().add(FetchData());
       }),
     );
   }

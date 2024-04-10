@@ -1,12 +1,16 @@
 part of 'incramenter_bloc.dart';
 
  class IncramenterState {
-  String counter;
-  IncramenterState({required this.counter});
+  String? data;
+  bool isLoading;
+  
+  
+  IncramenterState({this.data,required this.isLoading});
  }
 
- class IncramenterInitial extends IncramenterState {
-  IncramenterInitial() : super(counter: 'null');
+ class Loading extends IncramenterState {
+  Loading() : super(isLoading: false);
+  
 }
 
 // //loading
@@ -26,9 +30,9 @@ part of 'incramenter_bloc.dart';
 // }
 
 
-// //error
-// class Error extends IncramenterState{
-//   final String error;
-//   Error({required this.error});
-// }
+//error
+class Error extends IncramenterState{
+  final String error;
+  Error({required this.error}):super(isLoading: true);
+}
 
