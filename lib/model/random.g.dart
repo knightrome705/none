@@ -208,7 +208,7 @@ Map<String, dynamic> _$$PictureImplToJson(_$PictureImpl instance) =>
 
 _$InfoImpl _$$InfoImplFromJson(Map<String, dynamic> json) => _$InfoImpl(
       seed: json['seed'] as String?,
-      result: json['result'] as int?,
+      results: json['results'] as int?,
       page: json['page'] as int?,
       version: json['version'] as String?,
     );
@@ -216,7 +216,7 @@ _$InfoImpl _$$InfoImplFromJson(Map<String, dynamic> json) => _$InfoImpl(
 Map<String, dynamic> _$$InfoImplToJson(_$InfoImpl instance) =>
     <String, dynamic>{
       'seed': instance.seed,
-      'result': instance.result,
+      'results': instance.results,
       'page': instance.page,
       'version': instance.version,
     };

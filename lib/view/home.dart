@@ -7,6 +7,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+     context.read<IncrementBloc>().add(const IncrementEvent.fetchData());
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -18,9 +19,16 @@ class Home extends StatelessWidget {
       body: BlocBuilder<IncrementBloc, IncrementState>(
         builder: (context, state) {
           if(state.isLoading){
-            return Center(child: CircularProgressIndicator(),);
+            return const Center(child: CircularProgressIndicator(),);
           }else{
-            return Center(child: Text("${state.user?.results[0].name?.title},${state.user?.results[0].name?.first} ${state.user?.results[0].name?.last}"??"nodata",style: TextStyle(fontSize: 20),));
+            return Center(child:Column(
+              children: [
+                Text(state.user?.results[0].name?.first??"nodata",style:const TextStyle(fontSize: 30),),
+                // CircleAvatar(backgroundImage: NetworkImage(state.user!.results[0].picture.large),),
+                Text(state.user?.results[0].picture.thumbnail??"nodata",style:const TextStyle(fontSize: 10),),
+                Text(state.user?.results[0].location?.city.toString()??"nodata",style:const TextStyle(fontSize: 20),),
+              ],
+            ));
           }
         },
       ),
@@ -31,7 +39,7 @@ class Home extends StatelessWidget {
             style: TextStyle(color: Colors.white),
           ),
           onPressed: () {
-            context.read<IncrementBloc>().add(IncrementEvent.fetchData());
+            context.read<IncrementBloc>().add(const IncrementEvent.fetchData());
           }),
     );
   }

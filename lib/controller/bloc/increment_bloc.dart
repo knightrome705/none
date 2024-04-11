@@ -10,7 +10,7 @@ part 'increment_bloc.freezed.dart';
 class IncrementBloc extends Bloc<IncrementEvent, IncrementState> {
   IncrementBloc() : super(IncrementState.initial()) {
     on<_FetchData>((event, emit) async{
-      emit(IncrementState(isLoading: true));
+      emit(const IncrementState(isLoading: true));
       final data=await ApiFetch.fetchUser();
       emit(IncrementState(isLoading: false,user: data));
     });

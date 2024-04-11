@@ -2461,7 +2461,7 @@ Info _$InfoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Info {
   String? get seed => throw _privateConstructorUsedError;
-  int? get result => throw _privateConstructorUsedError;
+  int? get results => throw _privateConstructorUsedError;
   int? get page => throw _privateConstructorUsedError;
   String? get version => throw _privateConstructorUsedError;
 
@@ -2475,7 +2475,7 @@ abstract class $InfoCopyWith<$Res> {
   factory $InfoCopyWith(Info value, $Res Function(Info) then) =
       _$InfoCopyWithImpl<$Res, Info>;
   @useResult
-  $Res call({String? seed, int? result, int? page, String? version});
+  $Res call({String? seed, int? results, int? page, String? version});
 }
 
 /// @nodoc
@@ -2492,7 +2492,7 @@ class _$InfoCopyWithImpl<$Res, $Val extends Info>
   @override
   $Res call({
     Object? seed = freezed,
-    Object? result = freezed,
+    Object? results = freezed,
     Object? page = freezed,
     Object? version = freezed,
   }) {
@@ -2501,9 +2501,9 @@ class _$InfoCopyWithImpl<$Res, $Val extends Info>
           ? _value.seed
           : seed // ignore: cast_nullable_to_non_nullable
               as String?,
-      result: freezed == result
-          ? _value.result
-          : result // ignore: cast_nullable_to_non_nullable
+      results: freezed == results
+          ? _value.results
+          : results // ignore: cast_nullable_to_non_nullable
               as int?,
       page: freezed == page
           ? _value.page
@@ -2524,7 +2524,7 @@ abstract class _$$InfoImplCopyWith<$Res> implements $InfoCopyWith<$Res> {
       __$$InfoImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? seed, int? result, int? page, String? version});
+  $Res call({String? seed, int? results, int? page, String? version});
 }
 
 /// @nodoc
@@ -2538,7 +2538,7 @@ class __$$InfoImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? seed = freezed,
-    Object? result = freezed,
+    Object? results = freezed,
     Object? page = freezed,
     Object? version = freezed,
   }) {
@@ -2547,9 +2547,9 @@ class __$$InfoImplCopyWithImpl<$Res>
           ? _value.seed
           : seed // ignore: cast_nullable_to_non_nullable
               as String?,
-      result: freezed == result
-          ? _value.result
-          : result // ignore: cast_nullable_to_non_nullable
+      results: freezed == results
+          ? _value.results
+          : results // ignore: cast_nullable_to_non_nullable
               as int?,
       page: freezed == page
           ? _value.page
@@ -2568,7 +2568,7 @@ class __$$InfoImplCopyWithImpl<$Res>
 class _$InfoImpl implements _Info {
   const _$InfoImpl(
       {required this.seed,
-      required this.result,
+      required this.results,
       required this.page,
       required this.version});
 
@@ -2578,7 +2578,7 @@ class _$InfoImpl implements _Info {
   @override
   final String? seed;
   @override
-  final int? result;
+  final int? results;
   @override
   final int? page;
   @override
@@ -2586,7 +2586,7 @@ class _$InfoImpl implements _Info {
 
   @override
   String toString() {
-    return 'Info(seed: $seed, result: $result, page: $page, version: $version)';
+    return 'Info(seed: $seed, results: $results, page: $page, version: $version)';
   }
 
   @override
@@ -2595,14 +2595,14 @@ class _$InfoImpl implements _Info {
         (other.runtimeType == runtimeType &&
             other is _$InfoImpl &&
             (identical(other.seed, seed) || other.seed == seed) &&
-            (identical(other.result, result) || other.result == result) &&
+            (identical(other.results, results) || other.results == results) &&
             (identical(other.page, page) || other.page == page) &&
             (identical(other.version, version) || other.version == version));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, seed, result, page, version);
+  int get hashCode => Object.hash(runtimeType, seed, results, page, version);
 
   @JsonKey(ignore: true)
   @override
@@ -2621,7 +2621,7 @@ class _$InfoImpl implements _Info {
 abstract class _Info implements Info {
   const factory _Info(
       {required final String? seed,
-      required final int? result,
+      required final int? results,
       required final int? page,
       required final String? version}) = _$InfoImpl;
 
@@ -2630,7 +2630,7 @@ abstract class _Info implements Info {
   @override
   String? get seed;
   @override
-  int? get result;
+  int? get results;
   @override
   int? get page;
   @override

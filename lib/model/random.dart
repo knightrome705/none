@@ -139,7 +139,7 @@ class Picture with _$Picture{
 class Info with _$Info{
   const factory Info({
     required String? seed,
-    required int? result,
+    required int? results,
     required int? page,
     required String? version,
   }) = _Info;
